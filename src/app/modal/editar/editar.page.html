@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>editar</ion-title>
+    <ion-buttons slot="end" (click)='closeModal()'>
+    
+      <ion-icon slot="icon-only" name="close"></ion-icon>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <form (ngSubmit)="updateTarea()">
+    <!-- Input with placeholder -->
+    <ion-input placeholder="Titulo" name='titulo' [(ngModel)]='editingTarea.titulo'></ion-input>
+    <!-- Input with placeholder -->
+  <ion-input placeholder="Descripcion" name='descripcion' [(ngModel)]='editingTarea.descripcion'></ion-input>
+  <!-- estado -->
+  <ion-item>
+    <ion-label>Estado</ion-label>
+    <ion-select placeholder="Select One" name='estado' [(ngModel)]='editingTarea.estado'>
+      <ion-select-option value="false">Pendiente</ion-select-option>
+      <ion-select-option value="true">Completo</ion-select-option>
+      
+    </ion-select>
+  </ion-item>
+  <!-- Input with placeholder -->
+  <ion-item>
+    <ion-label>Prioridad</ion-label>
+    <ion-select placeholder="Select One" name='prioridad' [(ngModel)]='editingTarea.prioridad'>
+      <ion-select-option value="Alta">Alta</ion-select-option>
+      <ion-select-option value="Media">Media</ion-select-option>
+      <ion-select-option value="Baja">Baja</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <!-- Number type input -->
+  <ion-input type="date" name='creacion' [(ngModel)]='editingTarea.creacion'></ion-input>
+   <div id='containerU'>
+    <ion-button color="secondary" type="submit">
+      Actualizar
+    </ion-button>
+  </div>  
+  
+  </form>
+
+</ion-content>

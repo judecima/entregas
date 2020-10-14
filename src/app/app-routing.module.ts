@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'alta',
+    loadChildren: () => import('./modal/alta/alta.module').then( m => m.AltaPageModule)
+  },
+  {
+    path: 'editar',
+    loadChildren: () => import('./modal/editar/editar.module').then( m => m.EditarPageModule)
+  },
 ];
 
 @NgModule({
